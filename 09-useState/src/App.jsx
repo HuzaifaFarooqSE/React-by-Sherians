@@ -3,8 +3,9 @@ import React, {useState} from 'react'
 const App = () => {
     const [num, setnum] = useState({user: "Huzaifa", age: 20});
     const clicker = ()=>{
-        setnum(upd=>({...num,age:30}))
-        
+
+        setnum({user: "Hasan", age: 21});
+        console.log(num.user)
     }
   return (
     <div>
