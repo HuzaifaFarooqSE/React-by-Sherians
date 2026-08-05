@@ -1,0 +1,12 @@
+@import 'tailwindcss';
+
+body {
+
+}
+
+input, button{
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 10px;
+    background-color: rgb(173, 169, 169);
+}
