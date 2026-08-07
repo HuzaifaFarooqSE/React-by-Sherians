@@ -1,16 +1,22 @@
-import React, {useState} from 'react'
+import React  from 'react'
+import { useState } from "react";
+
 const formHandler = (e) =>{
   e.preventDefault()
   console.log("Form Submitted")
 }
 const App = () => {
+  const [color, setcolor] = useState('bg-white')
+  const changeColor = ()=>{
+    setcolor('bg-green-400')
+  }
   return (
     <div className='h-screen lg:flex bg-black text-white'>
       <form onSubmit={(e)=>{
         formHandler(e)
       }} className='flex gap-4 lg:w-1/2 p-10 flex-col items-start'>
          <h1 className='text-4xl mb-2 font-bold'>Add Notes</h1>
-            <div className='flex flex-col items-start gap-5 w-1/2'>
+            <div  className='flex flex-col items-start gap-5 w-1/2'>
               <input type="text" 
                 placeholder='Enter your tasks' 
                 className='px-5 w-full font-medium py-2 border-2 outline-none rounded' />
@@ -26,7 +32,9 @@ const App = () => {
             
       </form>
       <div className='flex gap-5 flex-wrap'>
-        <div className='h-52 w-40 rounded-2xl bg-white'></div>
+        <div className={`h-52 w-40 ${color} rounded-2xl`}>
+          <button onClick={changeColor}>Click</button>
+        </div>
         <div className='h-52 w-40 rounded-2xl bg-white'></div>
         <div className='h-52 w-40 rounded-2xl bg-white'></div>
         <div className='h-52 w-40 rounded-2xl bg-white'></div>
