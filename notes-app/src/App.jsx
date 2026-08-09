@@ -28,6 +28,14 @@ const App = () => {
   //   setTitle('')
   //   setdetails('')
 }
+
+  const deleteNote=(idx)=>{
+    const copyTask = [...task]
+    console.log(idx);
+    copyTask.splice(idx,1)
+    setTask(copyTask)
+    
+  }
   return (
     <div className='h-screen lg:flex bg-black text-white'>
 
@@ -75,8 +83,12 @@ const App = () => {
         
         {task.map((elem, idx)=>{
           return(
-            <div key={idx} className='h-52 w-40 rounded-2xl bg-white text-black p-4'>
-              <h3>{elem.title}</h3>
+            <div key={idx} className='h-52 w-40 rounded-2xl bg-white text-black p-4 '>
+              <h3 className=' flex font-bold text-lg border-b-2 justify-between  '>{elem.title}
+                <button className='border-2 rounded-full h-fit w-fit p-1 text-xs bg-red-600 cursor-pointer active:scale-95 text-white' onClick={()=>{
+                  deleteNote(idx)
+                }}>X</button>
+              </h3>
               <h3>{elem.details}</h3>
             </div>
           )
