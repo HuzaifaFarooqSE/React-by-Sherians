@@ -6,6 +6,8 @@ const App = () => {
     const response = await axios.get('https://jsonplaceholder.typicode.com/users')
     
     setData(response.data)
+    console.log(response);
+    
     
   }
   return (
